@@ -80,7 +80,7 @@ class ViewController: UIViewController {
     @IBAction func equalsPressed(_ sender: Any) {
         
         inOperation = false // operasyonu durdur
-        if validInput(){
+        if validInput() == ""{
             let forceDouble = formula.replacingOccurrences(of: "(?<![\\d\\.])([0-9]+)(?!\\.[0-9]+)", with: "$1.0", options: .regularExpression) // Sadece tam sayıları Double'a zorlama
             let checkFormulaPercentage = forceDouble.replacingOccurrences(of: "%", with: "*0.01") // yüzde alma işlemi için formülü düzenle
             let expression = NSExpression(format: checkFormulaPercentage) // tüm işlemi expression ile yap
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
             formula = ""
         }else {
             // geçerli giriş olmayan durumlarda alert çıkartır
-            let alert = UIAlertController(title: "Hatalı Giriş", message: "Hesap makinesi girilen veriyle işlem yapamadı!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Hatalı Giriş", message: validInput(), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .default))
             self.present(alert, animated: true, completion: nil)
         }
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     }
     
     // eğer geçerli giriş yapılmadı ise false gönderecek
-    func validInput() -> Bool{
+    func validInput() -> String{
         
         var count = 0
         var funcCharIndexes = [Int]()
@@ -126,9 +126,9 @@ class ViewController: UIViewController {
         for index in zeroIndex {
             if let targetIndex = formula.index(formula.startIndex, offsetBy: index - 1, limitedBy: formula.endIndex) {
                 if formula[targetIndex] == "/" {
-                    return false
+                    return "Herhangi bir sayıyı 0'a bölemezsin!"
                 }
-                return true
+                return ""
             }
         }
         
@@ -155,15 +155,15 @@ class ViewController: UIViewController {
         
         for index in funcCharIndexes { // özel karakterler arrayini döndürür
             if index == 0 { // eğer ilk index özel karakter ise false döndür
-                return false
+                return "İlk karakter bir işlem operatörü olamaz!"
             }
             if index == formula.count - 1 { // eğer son index özel karakter ise false döndürür
-                return false
+                return "Son karakter bir işlem operatörü olamaz!"
             }
             
             if previous != -1{ // previous -1 e eşit ise çalışır.
                 if index - previous == 1 { // index değerinden previous çıktığında 1 kalıyorsa iki özel karakter yan yana demektir. Bu yüzden false döner
-                    return false
+                    return "İki işlem operatörünü yan yana giremezsin"
                 }
             }
             
@@ -173,7 +173,7 @@ class ViewController: UIViewController {
         }
         
         
-        return true
+        return ""
     }
     
 }

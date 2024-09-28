@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700D3BC02CA895C6009DD046 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700D3BBF2CA895C6009DD046 /* CustomButton.swift */; };
 		700DFD082CA5D04F007B6EBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700DFD072CA5D04F007B6EBB /* AppDelegate.swift */; };
 		700DFD0A2CA5D04F007B6EBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700DFD092CA5D04F007B6EBB /* SceneDelegate.swift */; };
 		700DFD0C2CA5D04F007B6EBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700DFD0B2CA5D04F007B6EBB /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		700D3BBF2CA895C6009DD046 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		700DFD042CA5D04F007B6EBB /* CalculatorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		700DFD072CA5D04F007B6EBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		700DFD092CA5D04F007B6EBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				700DFD072CA5D04F007B6EBB /* AppDelegate.swift */,
 				700DFD092CA5D04F007B6EBB /* SceneDelegate.swift */,
+				700D3BBF2CA895C6009DD046 /* CustomButton.swift */,
 				700DFD0B2CA5D04F007B6EBB /* ViewController.swift */,
 				700DFD0D2CA5D04F007B6EBB /* Main.storyboard */,
 				700DFD102CA5D050007B6EBB /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700D3BC02CA895C6009DD046 /* CustomButton.swift in Sources */,
 				700DFD0C2CA5D04F007B6EBB /* ViewController.swift in Sources */,
 				700DFD082CA5D04F007B6EBB /* AppDelegate.swift in Sources */,
 				700DFD0A2CA5D04F007B6EBB /* SceneDelegate.swift in Sources */,
