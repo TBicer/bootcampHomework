@@ -110,13 +110,26 @@ class ViewController: UIViewController {
         
         var count = 0
         var funcCharIndexes = [Int]()
+        var zeroIndex = [Int]()
         
         // formula içerisindeki tüm charları sayar
         for char in formula {
             if speacialCharacter(char: char){ // eğer özel karakter ise array'e index countu yollar
                 funcCharIndexes.append(count)
             }
+            if char == "0" {
+                zeroIndex.append(count)
+            }
             count += 1
+        }
+        
+        for index in zeroIndex {
+            if let targetIndex = formula.index(formula.startIndex, offsetBy: index - 1, limitedBy: formula.endIndex) {
+                if formula[targetIndex] == "/" {
+                    return false
+                }
+                return true
+            }
         }
         
         func speacialCharacter (char: Character) -> Bool{ // özel karakter ise true döndür
@@ -153,8 +166,12 @@ class ViewController: UIViewController {
                     return false
                 }
             }
+            
+            
+            
             previous = index
         }
+        
         
         return true
     }
