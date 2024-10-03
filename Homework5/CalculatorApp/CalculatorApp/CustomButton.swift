@@ -37,7 +37,7 @@ class CustomButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.masksToBounds = false
-        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOpacity = 0.4
     }
     
 }
